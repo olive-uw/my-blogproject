@@ -1,0 +1,10 @@
+import express from'express';
+import BlogController from'../Controller/BlogController';
+import {verifyAuth} from '../middleware/Authverfication';
+const Route= express.Router();
+Route.post("/create/articles",BlogController.createBlogs);
+Route.get('/blog/get',BlogController.getAllBlogs);
+Route.get('/blog/get/:id',BlogController.getOneBlog);
+Route.delete('/blog/get/:id',BlogController.deleteOneBlog);
+Route.patch('/blog/get/:id',BlogController.updateDataBlog);
+export default Route;
